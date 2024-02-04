@@ -31,7 +31,6 @@ def submit_quiz():
     try:
         score, total_questions = map(int, result.strip().split())
     except (AttributeError, ValueError):
-        # Handle the case where the result is not in the expected format
         score, total_questions = 0, len(questions)
 
     return render_template('result.html', score=score, total_questions=total_questions)
